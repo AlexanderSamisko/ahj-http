@@ -18,6 +18,30 @@
         ],
         "no-undef": [
             "off"
+        ],
+        "consistent-return": [
+            "off"
+        ],
+        "no-return-await": [
+            "off"
+        ],
+        "prefer-destructuring": [
+            "off"
+        ],
+        "no-unused-vars": [
+            "off"
+        ],
+        "class-methods-use-this": [
+            "off"
+        ],
+        "import/no-cycle": [
+            "off"
+        ],
+        "no-shadow": [
+            "off"
+        ],
+        "no-new": [
+            "off"
         ]
     }
 }

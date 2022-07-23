@@ -1,68 +1,62 @@
-const fs = require(`fs`);
-
 class Handler {
-    constructor() {
-        this.tickets = [];
+  constructor() {
+    this.tickets = [];
+  }
+
+  registerTicket(value) {
+    const ticket = {
+      id: this.tickets.length,
+      name: value.name,
+      status: value.status,
+      created: value.created,
+      description: value.description,
+    };
+
+    this.tickets.push(ticket);
+  }
+
+  changeTicketStatus(value) {
+    const { id } = value;
+    const { status } = value;
+
+    for (let i = 0; i < this.tickets.length; i += 1) {
+      if (this.tickets[i].id === id) {
+        this.tickets[i].status = status;
+      }
     }
+  }
 
-    registerTicket(value) {
-        
-        let ticket = {
-            id: this.tickets.length,
-            name: value.name,
-            status: value.status,
-            created: value.created,
-            description: value.description
-        }
-
-        this.tickets.push(ticket);
+  findTicket(value) {
+    const { id } = value;
+    for (let i = 0; i < this.tickets.length; i += 1) {
+      if (this.tickets[i].id === id) {
+        return i;
+      }
     }
+  }
 
-    changeTicketStatus(value) {
-        let id = value.id;
-        let status = value.status;
-
-        for(let i = 0; i < this.tickets.length; i++) {
-            if(this.tickets[i].id == id) {
-                this.tickets[i].status = status;
-            }
-        };   
+  removeTicket(value) {
+    const { id } = value;
+    for (let i = 0; i < this.tickets.length; i += 1) {
+      if (this.tickets[i].id === id) {
+        this.tickets.splice(i, 1);
+      }
     }
+  }
 
-    findTicket(value) {
-
-        let id = value.id;
-        for(let i = 0; i < this.tickets.length; i++) {
-            if(this.tickets[i].id == id) {
-                return i;
-            }
-        }
-        
+  editTicket(value) {
+    const { id } = value;
+    const { name } = value;
+    const { description } = value;
+    for (let i = 0; i < this.tickets.length; i += 1) {
+      if (this.tickets[i].id === id) {
+        this.tickets[i].name = name;
+        this.tickets[i].description = description;
+      }
     }
-
-    removeTicket(value) {
-        let id = value.id;
-        for(let i = 0; i < this.tickets.length; i++) {
-            if(this.tickets[i].id == id) {
-                this.tickets.splice(i, 1);
-            }
-        }
-    }
-
-    editTicket(value) {
-        let id = value.id;
-        let name = value.name;
-        let description = value.description;
-        for(let i = 0; i < this.tickets.length; i++) {
-            if(this.tickets[i].id == id) {
-                this.tickets[i].name = name;
-                this.tickets[i].description = description;
-            }
-        }
-
-    }
+  }
 }
 
 module.exports = {
-    Handler
-}
+  Handler,
+};

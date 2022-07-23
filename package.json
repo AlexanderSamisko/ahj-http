@@ -169,6 +169,9 @@
     "test": "jest --passWithNoTests",
     "startAdd": "forever -w server.js"
   },
+  "engines":{
+    "node":"11.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlexanderSamisko/js-advanced-diploma.git"
