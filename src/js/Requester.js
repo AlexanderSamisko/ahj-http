@@ -4,10 +4,10 @@ export default class Requester {
   static makeRequest(method, value, queryString) {
     let url;
     if (method === 'POST') {
-      url = `http://localhost:7044/?${queryString}`;
+      url = `http://localhost:7070/?${queryString}`;
     } else if (method === 'GET') {
       const keys = Object.keys(value);
-      url = `http://localhost:7044/?action=${queryString}`;
+      url = `http://localhost:7070/?action=${queryString}`;
       for (let i = 0; i < keys.length; i += 1) {
         url += `&${keys[i]}=${value[keys[i]]}`;
       }
