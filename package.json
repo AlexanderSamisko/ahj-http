@@ -170,7 +170,7 @@
     "test": "jest --passWithNoTests",
     "startAdd": "forever -w server.js"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:7070",
   "engines":{
     "node":"11.x"
   },
