@@ -3,4 +3,4 @@ import Requester from './Requester';
 
 new Desk();
 
-Requester.makeRequest('GET', {}, 'getAllTickets');
+// Requester.makeRequest('GET', {}, 'getAllTickets');
