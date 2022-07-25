@@ -163,8 +163,8 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
-    "prestart": "webpack serve --mode development",
-    "start": "forever server.js",
+    "prestart": "npm run server.js",
+    "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "lint": "eslint . --fix",
     "test": "jest --passWithNoTests",
