@@ -163,12 +163,12 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
-    "prestart": "npm install",
-    "start": "webpack serve --mode development",
+    "prestart": "webpack serve --mode development",
+    "start": "forever server.js",
     "build": "webpack --mode production",
     "lint": "eslint . --fix",
     "test": "jest --passWithNoTests",
-    "startAdd": "forever -w server.js"
+    "startAdd": "forever server.js"
   },
   "proxy": "http://localhost:7070",
   "engines":{
